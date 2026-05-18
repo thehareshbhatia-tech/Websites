@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova Asian Bistro — Sushi, Thai & Chinese Fusion · New Hyde Park, NY</title>
+  <meta name="description" content="Nova Asian Bistro in New Hyde Park serves chef-crafted sushi, Thai and Chinese fusion. All-you-can-eat sushi daily. Reserve a table or order online — 1215 Jericho Turnpike." />
+  <meta name="theme-color" content="#0f0f0f" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top announcement bar -->
+  <div class="announce">
+    <span>All-You-Can-Eat Sushi · Daily · From $26.95</span>
+    <span class="dot">·</span>
+    <a href="tel:+15162808866">Call (516) 280-8866</a>
+  </div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="brand" aria-label="Nova Asian Bistro home">
+        <span class="brand-mark">新</span>
+        <span class="brand-text">
+          <span class="brand-name">Nova</span>
+          <span class="brand-sub">Asian Bistro</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main">
+        <a href="#story">Our Story</a>
+        <a href="#menu">Menu</a>
+        <a href="#ayce">All-You-Can-Eat</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#visit">Visit</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="#reserve" class="btn btn-ghost">Reserve</a>
+        <a href="#order" class="btn btn-gold">Order Online</a>
+      </div>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav-mobile" id="navMobile" aria-hidden="true">
+      <a href="#story">Our Story</a>
+      <a href="#menu">Menu</a>
+      <a href="#ayce">All-You-Can-Eat</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#visit">Visit</a>
+      <a href="#reserve" class="btn btn-ghost">Reserve a Table</a>
+      <a href="#order" class="btn btn-gold">Order Online</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=2000&q=80" alt="Assorted nigiri and sashimi on a slate board" />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <p class="eyebrow">Est. New Hyde Park · Long Island</p>
+      <h1 class="display">
+        Where the <em>sushi bar</em><br />
+        meets the <em>spice road</em>.
+      </h1>
+      <p class="lede">
+        Three cuisines, one kitchen. Japanese precision, Thai fire, Chinese soul —
+        crafted by Chef Peter and served beneath warm lantern light.
+      </p>
+      <div class="hero-cta">
+        <a href="#reserve" class="btn btn-gold btn-lg">Reserve a Table</a>
+        <a href="#menu" class="btn btn-outline btn-lg">View Menu</a>
+      </div>
+
+      <div class="hero-meta">
+        <div>
+          <span class="meta-label">Open Today</span>
+          <span class="meta-value" id="todayHours">11:00 AM – 10:00 PM</span>
+        </div>
+        <div>
+          <span class="meta-label">Reservations</span>
+          <span class="meta-value"><a href="tel:+15162808866">(516) 280-8866</a></span>
+        </div>
+        <div>
+          <span class="meta-label">Find Us</span>
+          <span class="meta-value">1215 Jericho Tpke</span>
+        </div>
+      </div>
+    </div>
+
+    <a href="#story" class="scroll-cue" aria-label="Scroll down">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>· Hand-cut Sashimi ·</span>
+      <span>· Drunken Noodles ·</span>
+      <span>· Spicy Tuna Crispy Rice ·</span>
+      <span>· General Tso ·</span>
+      <span>· Volcano Roll ·</span>
+      <span>· Pad See Ew ·</span>
+      <span>· Chef's Omakase ·</span>
+      <span>· Hand-cut Sashimi ·</span>
+      <span>· Drunken Noodles ·</span>
+      <span>· Spicy Tuna Crispy Rice ·</span>
+      <span>· General Tso ·</span>
+      <span>· Volcano Roll ·</span>
+      <span>· Pad See Ew ·</span>
+      <span>· Chef's Omakase ·</span>
+    </div>
+  </div>
+
+  <!-- STORY -->
+  <section class="section story" id="story">
+    <div class="container two-col">
+      <div class="col-media reveal">
+        <div class="img-frame">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80" alt="Chef preparing sushi at the counter" />
+        </div>
+        <div class="img-frame img-frame-sm">
+          <img src="https://images.unsplash.com/photo-1526318896980-cf78c088247c?auto=format&fit=crop&w=900&q=80" alt="Tea being poured" />
+        </div>
+      </div>
+
+      <div class="col-text reveal">
+        <p class="eyebrow">Our Story</p>
+        <h2 class="display-sm">A neighborhood table for three great cuisines.</h2>
+        <p>
+          Nova began with a simple idea: the best of Japanese, Thai, and Chinese cooking
+          deserves to live under one roof — without compromise and without pretense.
+          Chef Peter trained at sushi counters in New York and Tokyo before opening Nova
+          on Jericho Turnpike, where his team hand-cuts every piece of fish and stir-fries
+          to order in a wok-fired open kitchen.
+        </p>
+        <p>
+          Whether you're here for a quick weekday lunch, an unhurried date night, or
+          gathering the whole family for our all-you-can-eat sushi, you'll find the same
+          thing on every plate: ingredients we'd serve our own family.
+        </p>
+
+        <div class="stat-row">
+          <div class="stat"><strong>15+</strong><span>years on Long Island</span></div>
+          <div class="stat"><strong>4.6★</strong><span>500+ Yelp reviews</span></div>
+          <div class="stat"><strong>120+</strong><span>dishes on the menu</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="section menu" id="menu">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="eyebrow">The Menu</p>
+        <h2 class="display-sm">Chef's selections from three coasts.</h2>
+        <p class="section-lede">
+          A taste of what we're known for. Our full menu runs deeper — over 120 dishes including
+          rolls, hibachi, curries, soups, and chef specials.
+        </p>
+      </header>
+
+      <div class="menu-tabs reveal" role="tablist">
+        <button class="tab active" data-tab="sushi" role="tab" aria-selected="true">Sushi &amp; Sashimi</button>
+        <button class="tab" data-tab="thai" role="tab">Thai</button>
+        <button class="tab" data-tab="chinese" role="tab">Chinese</button>
+        <button class="tab" data-tab="signature" role="tab">Chef Specials</button>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+        <!-- populated by JS -->
+      </div>
+
+      <div class="menu-foot reveal">
+        <a href="#order" class="btn btn-gold btn-lg">View Full Menu &amp; Order</a>
+        <p class="muted">Dietary needs? Ask your server — most dishes can be prepared gluten-free or vegetarian.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AYCE FEATURE -->
+  <section class="section ayce" id="ayce">
+    <div class="container ayce-inner">
+      <div class="ayce-media reveal">
+        <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=1600&q=80" alt="A spread of sushi rolls and nigiri" />
+        <div class="ayce-badge">
+          <span class="badge-eyebrow">All You Can Eat</span>
+          <span class="badge-price">$26.95</span>
+          <span class="badge-meta">Lunch · Mon–Fri</span>
+        </div>
+      </div>
+
+      <div class="ayce-copy reveal">
+        <p class="eyebrow gold">Daily Feature</p>
+        <h2 class="display-sm">All-You-Can-Eat Sushi.<br />Hand-rolled, never frozen.</h2>
+        <p>
+          Order from a curated menu of 60+ rolls, nigiri, and small plates as many times as
+          you like — fresh, made-to-order, no buffet line. Bring the family, bring an
+          appetite. We'll keep the soy poured.
+        </p>
+
+        <ul class="ayce-list">
+          <li><strong>Lunch</strong><span>Mon–Fri · 11:30 AM – 3:30 PM</span><em>$26.95</em></li>
+          <li><strong>Dinner</strong><span>Mon–Thu · 5:00 PM – Close</span><em>$32.95</em></li>
+          <li><strong>Weekend</strong><span>Fri–Sun · All Day</span><em>$34.95</em></li>
+          <li><strong>Kids (Under 10)</strong><span>Half Price</span><em>—</em></li>
+        </ul>
+
+        <a href="#reserve" class="btn btn-gold">Reserve for AYCE</a>
+        <p class="fineprint">Dine-in only. 90-minute seating. Uneaten food billed à la carte.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section gallery" id="gallery">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="eyebrow">Gallery</p>
+        <h2 class="display-sm">The room, the plates, the people.</h2>
+      </header>
+
+      <div class="gallery-grid reveal">
+        <a class="g-item g-tall" href="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=1600&q=85" target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=900&q=80" alt="Sushi platter" loading="lazy" />
+        </a>
+        <a class="g-item" href="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=1600&q=85" target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=900&q=80" alt="Thai noodles" loading="lazy" />
+        </a>
+        <a class="g-item" href="https://images.unsplash.com/photo-1526318896980-cf78c088247c?auto=format&fit=crop&w=1600&q=85" target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1526318896980-cf78c088247c?auto=format&fit=crop&w=900&q=80" alt="Tea service" loading="lazy" />
+        </a>
+        <a class="g-item g-wide" href="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1600&q=85" target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1400&q=80" alt="Bowl of ramen" loading="lazy" />
+        </a>
+        <a class="g-item" href="https://images.unsplash.com/photo-1562158074-d49ec40fa56e?auto=format&fit=crop&w=1600&q=85" target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1562158074-d49ec40fa56e?auto=format&fit=crop&w=900&q=80" alt="Dumplings on a plate" loading="lazy" />
+        </a>
+        <a class="g-item g-tall" href="https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&w=1600&q=85" target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&w=900&q=80" alt="Sushi rolls close-up" loading="lazy" />
+        </a>
+        <a class="g-item" href="https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=1600&q=85" target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=900&q=80" alt="Stir fry" loading="lazy" />
+        </a>
+        <a class="g-item" href="https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?auto=format&fit=crop&w=1600&q=85" target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?auto=format&fit=crop&w=900&q=80" alt="Cocktail and plates" loading="lazy" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section reviews">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="eyebrow">Word of Mouth</p>
+        <h2 class="display-sm">Loved by the neighborhood.</h2>
+      </header>
+
+      <div class="reviews-grid reveal">
+        <figure class="review">
+          <div class="stars">★★★★★</div>
+          <blockquote>"The all-you-can-eat is the best deal on Long Island and the fish is unreal. Chef Peter takes care of us every time."</blockquote>
+          <figcaption>— Maria L., New Hyde Park</figcaption>
+        </figure>
+        <figure class="review">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Pad see ew so good I drove 40 minutes for it. The volcano roll is now a weekly ritual."</blockquote>
+          <figcaption>— David R., Garden City</figcaption>
+        </figure>
+        <figure class="review">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Quiet, warm, and the service treats you like family. Our go-to anniversary spot for three years running."</blockquote>
+          <figcaption>— Jen &amp; Mike, Floral Park</figcaption>
+        </figure>
+      </div>
+
+      <p class="reviews-foot muted">4.6 ★ average across 500+ reviews on Yelp &amp; Google.</p>
+    </div>
+  </section>
+
+  <!-- RESERVATION -->
+  <section class="section reserve" id="reserve">
+    <div class="container reserve-inner">
+      <div class="reserve-copy reveal">
+        <p class="eyebrow gold">Reservations</p>
+        <h2 class="display-sm">Save your seat at the bar.</h2>
+        <p>
+          Same-day tables available — we'll do our best to seat any party. For groups of 6+
+          or private events, please call us directly.
+        </p>
+        <p class="reserve-phone">
+          <a href="tel:+15162808866">(516) 280-8866</a>
+        </p>
+      </div>
+
+      <form class="reserve-form reveal" id="reserveForm" novalidate>
+        <div class="field">
+          <label for="rName">Name</label>
+          <input id="rName" name="name" type="text" required autocomplete="name" />
+        </div>
+        <div class="row-2">
+          <div class="field">
+            <label for="rPhone">Phone</label>
+            <input id="rPhone" name="phone" type="tel" required autocomplete="tel" />
+          </div>
+          <div class="field">
+            <label for="rEmail">Email</label>
+            <input id="rEmail" name="email" type="email" autocomplete="email" />
+          </div>
+        </div>
+        <div class="row-3">
+          <div class="field">
+            <label for="rDate">Date</label>
+            <input id="rDate" name="date" type="date" required />
+          </div>
+          <div class="field">
+            <label for="rTime">Time</label>
+            <input id="rTime" name="time" type="time" required />
+          </div>
+          <div class="field">
+            <label for="rParty">Guests</label>
+            <select id="rParty" name="party" required>
+              <option value="2">2 guests</option>
+              <option value="3">3 guests</option>
+              <option value="4">4 guests</option>
+              <option value="5">5 guests</option>
+              <option value="6">6 guests</option>
+              <option value="7+">7+ guests</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="rNotes">Notes (optional)</label>
+          <textarea id="rNotes" name="notes" rows="3" placeholder="Allergies, occasion, seating preference…"></textarea>
+        </div>
+        <button class="btn btn-gold btn-lg btn-block" type="submit">Request Reservation</button>
+        <p class="form-status" id="reserveStatus" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ORDER + VISIT -->
+  <section class="section visit" id="visit">
+    <div class="container visit-grid">
+
+      <div class="visit-card reveal" id="order">
+        <p class="eyebrow gold">Order Online</p>
+        <h3>Pickup &amp; Delivery</h3>
+        <p>Order direct or through your favorite app. Pickup ready in ~20 minutes.</p>
+        <div class="order-buttons">
+          <a href="tel:+15162808866" class="btn btn-gold btn-block">Order by Phone</a>
+          <a href="#" class="btn btn-outline btn-block">Grubhub</a>
+          <a href="#" class="btn btn-outline btn-block">DoorDash</a>
+          <a href="#" class="btn btn-outline btn-block">Uber Eats</a>
+        </div>
+      </div>
+
+      <div class="visit-card reveal">
+        <p class="eyebrow gold">Hours</p>
+        <h3>Open 7 Days</h3>
+        <ul class="hours-list" id="hoursList">
+          <li><span>Monday</span><em>11:00 AM – 10:00 PM</em></li>
+          <li><span>Tuesday</span><em>11:00 AM – 10:00 PM</em></li>
+          <li><span>Wednesday</span><em>11:00 AM – 10:00 PM</em></li>
+          <li><span>Thursday</span><em>11:00 AM – 10:00 PM</em></li>
+          <li><span>Friday</span><em>11:00 AM – 11:00 PM</em></li>
+          <li><span>Saturday</span><em>12:00 PM – 11:00 PM</em></li>
+          <li><span>Sunday</span><em>12:00 PM – 10:00 PM</em></li>
+        </ul>
+      </div>
+
+      <div class="visit-card reveal">
+        <p class="eyebrow gold">Find Us</p>
+        <h3>1215 Jericho Tpke</h3>
+        <p>New Hyde Park, NY 11040<br />Ample parking · Wheelchair accessible</p>
+        <a class="btn btn-outline btn-block" href="https://maps.google.com/?q=1215+Jericho+Turnpike+New+Hyde+Park+NY" target="_blank" rel="noopener">Get Directions</a>
+        <a class="btn btn-gold btn-block" href="tel:+15162808866">(516) 280-8866</a>
+      </div>
+
+    </div>
+
+    <div class="map-wrap reveal">
+      <iframe
+        title="Map to Nova Asian Bistro"
+        src="https://www.google.com/maps?q=1215+Jericho+Turnpike+New+Hyde+Park+NY&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="foot-brand">
+        <span class="brand-mark">新</span>
+        <div>
+          <div class="brand-name">Nova Asian Bistro</div>
+          <div class="brand-sub">Sushi · Thai · Chinese</div>
+        </div>
+      </div>
+
+      <div class="foot-cols">
+        <div>
+          <h4>Visit</h4>
+          <p>1215 Jericho Turnpike<br />New Hyde Park, NY 11040</p>
+          <p><a href="tel:+15162808866">(516) 280-8866</a></p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#ayce">All-You-Can-Eat</a></li>
+            <li><a href="#reserve">Reservations</a></li>
+            <li><a href="#order">Order Online</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow</h4>
+          <ul>
+            <li><a href="#" rel="noopener">Instagram</a></li>
+            <li><a href="#" rel="noopener">Facebook</a></li>
+            <li><a href="#" rel="noopener">Yelp</a></li>
+            <li><a href="#" rel="noopener">Google</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>© <span id="year"></span> Nova Asian Bistro. All rights reserved.</span>
+      <span>Crafted with care on Long Island.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
