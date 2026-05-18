@@ -1,5 +1,17 @@
 /* Nova Asian Bistro — interactions */
 
+// ---------- Image fallback ----------
+// Use local images/*.jpg if present; otherwise fall back to data-fb URL.
+document.querySelectorAll('img[data-fb]').forEach(img => {
+  let used = false;
+  img.addEventListener('error', () => {
+    if (used) return;
+    used = true;
+    img.src = img.dataset.fb;
+  }, { once: false });
+});
+
+
 // ---------- Menu data ----------
 const MENU = {
   sushi: [
