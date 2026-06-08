@@ -237,13 +237,13 @@ if (y) y.textContent = new Date().getFullYear();
   }
 })();
 
-// ---------- Hero "tubes" cursor background (WebGL, desktop only) ----------
+// ---------- Tubes interlude (WebGL band below the hero, desktop only) ----------
 // Ported from the threejs-components Tubes Cursor React component to vanilla JS.
-// Recolored to Nova's blue/violet/gold so the glow echoes the restaurant's real
-// LED lighting. Activates only with a real pointer + WebGL + motion allowed;
-// otherwise the hero photo (the fallback layer beneath) stays in view.
-(function initHeroTubes() {
-  const canvas = document.getElementById('heroTubes');
+// Lives in its own band below the hero. Recolored to Nova's blue/violet/gold so
+// the glow echoes the restaurant's real LED lighting. Activates only with a real
+// pointer + WebGL + motion allowed; otherwise the band stays a quiet dark panel.
+(function initTubesBand() {
+  const canvas = document.getElementById('tubesCanvas');
   if (!canvas) return;
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -277,16 +277,17 @@ if (y) y.textContent = new Date().getFullYear();
         });
         canvas.classList.add('is-on');
 
-        // Click anywhere in the hero (except buttons/links) shuffles the palette.
+        // Click anywhere in the band shuffles to the next on-brand palette.
         let i = 0;
-        const heroSection = document.getElementById('top');
-        if (heroSection) {
-          heroSection.style.cursor = 'pointer';
-          heroSection.addEventListener('click', (e) => {
-            if (e.target.closest('a, button, input, select, textarea')) return;
+        const band = document.getElementById('tubes');
+        const hint = band && band.querySelector('.tubes-hint');
+        if (band) {
+          band.style.cursor = 'pointer';
+          band.addEventListener('click', () => {
             i = (i + 1) % palettes.length;
             app.tubes.setColors(palettes[i].tubes);
             app.tubes.setLightsColors(palettes[i].lights);
+            if (hint) hint.style.opacity = '0';
           });
         }
       })
