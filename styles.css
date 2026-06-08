@@ -4,15 +4,18 @@
    ============================================ */
 
 :root {
-  --bg: #0c0c0d;
-  --bg-2: #131316;
-  --bg-3: #1a1a1f;
+  --bg: #0a0b10;
+  --bg-2: #101218;
+  --bg-3: #171a22;
   --ink: #f5f1e8;
   --ink-2: #c8c2b3;
   --ink-3: #8a8479;
   --gold: #c9a961;
   --gold-2: #e6c97a;
   --red: #8b2635;
+  --blue: #2f6bff;
+  --blue-2: #5f8bff;
+  --violet: #8a5cff;
   --line: rgba(245, 241, 232, 0.08);
   --line-2: rgba(245, 241, 232, 0.14);
 
@@ -30,7 +33,11 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(900px 520px at 82% -8%, rgba(47, 107, 255, 0.16), transparent 60%),
+    radial-gradient(760px 520px at -8% 16%, rgba(138, 92, 255, 0.12), transparent 60%),
+    var(--bg);
+  background-attachment: fixed;
   color: var(--ink);
   font-family: var(--sans);
   font-size: 16px;
@@ -209,8 +216,10 @@ p { color: var(--ink-2); }
   border: 1px solid var(--gold);
   color: var(--gold);
   font-family: var(--serif);
-  font-size: 1.2rem;
+  font-style: italic;
+  font-size: 1.35rem;
   border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(47, 107, 255, 0.07), 0 0 18px rgba(47, 107, 255, 0.20);
 }
 .brand-text { display: flex; flex-direction: column; line-height: 1; }
 .brand-name {
@@ -317,7 +326,7 @@ p { color: var(--ink-2); }
 }
 .hero-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(12,12,13,.45) 0%, rgba(12,12,13,.35) 40%, rgba(12,12,13,.95) 100%);
+  background: linear-gradient(180deg, rgba(10,11,16,.40) 0%, rgba(22,26,52,.32) 40%, rgba(10,11,16,.96) 100%);
 }
 
 .hero-content {
@@ -404,6 +413,7 @@ p { color: var(--ink-2); }
 }
 .marquee-track span { color: var(--ink); }
 .marquee-track span:nth-child(2n) { color: var(--gold); }
+.marquee-track span:nth-child(3n) { color: var(--blue-2); }
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }

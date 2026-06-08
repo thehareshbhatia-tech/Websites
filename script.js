@@ -14,45 +14,55 @@ document.querySelectorAll('img[data-fb]').forEach(img => {
 
 // ---------- Menu data ----------
 const MENU = {
+  rolls: [
+    { name: "Jericho Turnpike Roll", desc: "Lobster tempura and asparagus inside, topped with spicy crab, eel sauce and sweet miso.", price: "17", tag: "House" },
+    { name: "American Dream Roll", desc: "Shrimp tempura and cucumber, topped with eel, avocado, black tobiko and eel sauce.", price: "15" },
+    { name: "Angry Dragon Roll", desc: "Shrimp tempura and spicy tuna, topped with yellowtail, avocado and jalapeño, yuzu wasabi.", price: "16", tag: "Spicy" },
+    { name: "Spicy City Roll", desc: "Spicy crab and avocado inside, baked spicy crab, scallop, white fish, tobiko and eel sauce.", price: "17", tag: "Spicy" },
+    { name: "Passion Roll", desc: "Spicy crunchy tuna, salmon, yellowtail and crab, wrapped in tuna and shaped like a heart.", price: "16" },
+    { name: "Volcano Roll", desc: "Shrimp tempura and cucumber inside, spicy tuna outside.", price: "14" },
+    { name: "Dragon Roll", desc: "Eel and cucumber inside, avocado on top.", price: "14" },
+    { name: "Rainbow Roll", desc: "California roll topped with tuna, salmon, white fish and avocado.", price: "13" },
+  ],
   sushi: [
-    { name: "Chef's Sashimi Platter", desc: "18 pieces, market selection of the day.", price: "42", tag: "Signature" },
-    { name: "Volcano Roll", desc: "Spicy tuna inside, baked salmon and crab on top.", price: "16" },
-    { name: "Spicy Tuna Crispy Rice", desc: "Crisped sushi rice, yellowfin, jalapeño.", price: "14" },
-    { name: "Nova Special Roll", desc: "Shrimp tempura, avocado, eel, gold flakes.", price: "18", tag: "House" },
-    { name: "Yellowtail Jalapeño", desc: "Six pieces sashimi, yuzu ponzu, cilantro.", price: "17" },
-    { name: "Rainbow Roll", desc: "California roll wrapped in five varieties of fish.", price: "15" },
-    { name: "Toro Nigiri", desc: "Two pieces, fatty bluefin tuna belly.", price: "MP" },
-    { name: "Salmon Avocado Roll", desc: "Classic, fresh Atlantic salmon.", price: "9" },
+    { name: "Sushi and Sashimi (for 2)", desc: "8 pieces sushi, 18 pieces sashimi, spicy tuna roll and dragon roll.", price: "55", tag: "For Two" },
+    { name: "Sashimi Deluxe", desc: "Sixteen pieces of chef's market selection.", price: "25" },
+    { name: "Chirashi", desc: "13 pieces assorted raw fish, egg and pickles over seasoned rice.", price: "24" },
+    { name: "Unagi Don", desc: "Broiled eel and Japanese pickled vegetable over seasoned rice.", price: "25" },
+    { name: "Sushi Sashimi (for 1)", desc: "9 pieces sashimi, 5 pieces sushi and a California roll.", price: "26" },
+    { name: "Yellowtail Jalapeño", desc: "With ponzu sauce.", price: "13" },
+    { name: "Pepper Tuna Tataki", desc: "Seared peppered tuna, ponzu.", price: "12" },
+    { name: "Sushi Pizza", desc: "House specialty, crisp rice base.", price: "13" },
   ],
-  thai: [
-    { name: "Pad See Ew", desc: "Wide rice noodles, Chinese broccoli, sweet soy.", price: "16" },
-    { name: "Drunken Noodles", desc: "Wok-fired flat noodles, basil, chili, bell pepper.", price: "17", tag: "Spicy" },
-    { name: "Massaman Curry", desc: "Slow-braised beef, potato, peanut, coconut.", price: "19" },
-    { name: "Pad Thai", desc: "Rice noodles, tamarind, peanut, lime, scallion.", price: "16" },
-    { name: "Green Curry Chicken", desc: "Thai basil, eggplant, coconut milk, jasmine rice.", price: "18" },
-    { name: "Tom Yum Goong", desc: "Hot &amp; sour shrimp soup, lemongrass, lime leaf.", price: "12" },
-    { name: "Crispy Basil Duck", desc: "Half duck, holy basil, chili-garlic sauce.", price: "26", tag: "Chef Pick" },
-    { name: "Mango Sticky Rice", desc: "Sweet coconut sticky rice, ripe mango.", price: "10" },
+  kitchen: [
+    { name: "Grilled Chilean Sea Bass", desc: "Sautéed mixed vegetable with chef's miso-sake dressing.", price: "30", tag: "Chef" },
+    { name: "Crispy Duck", desc: "Plum sauce with mixed vegetables.", price: "28" },
+    { name: "Thai Red Curry Seafood Casserole", desc: "Lobster tail, shrimp, scallops and white fish in mild curry.", price: "29", tag: "Spicy" },
+    { name: "Filet Mignon", desc: "8 oz filet mignon with chef's brown sauce.", price: "27" },
+    { name: "Crispy Walnut Shrimp and Chicken", desc: "Creamy crispy shrimp with tangy sweet chicken.", price: "22" },
+    { name: "Pineapple Chicken and Shrimp", desc: "Bell pepper, onion and fresh pineapple in mild sweet and sour.", price: "19" },
+    { name: "Mongolian Beef", desc: "Sliced beef, scallion and onion with sweet brown sauce.", price: "18" },
+    { name: "Sesame Chicken", desc: "Crispy white meat, tangy sauce and seasonal greens.", price: "16" },
   ],
-  chinese: [
-    { name: "General Tso's Chicken", desc: "Crispy chicken, sweet-spicy glaze, broccoli.", price: "17" },
-    { name: "Mongolian Beef", desc: "Wok-tossed flank, scallion, soy reduction.", price: "21" },
-    { name: "Salt &amp; Pepper Shrimp", desc: "Lightly battered, jalapeño, garlic, scallion.", price: "22" },
-    { name: "Kung Pao Chicken", desc: "Peanut, dried chili, Sichuan peppercorn.", price: "17", tag: "Spicy" },
-    { name: "Sesame Beef", desc: "Crisped strips, sesame glaze, toasted seeds.", price: "21" },
-    { name: "Peking Duck (Half)", desc: "Pancakes, hoisin, scallion, cucumber.", price: "32", tag: "24h Notice" },
-    { name: "Chow Fun Beef", desc: "Wide rice noodles, bean sprout, scallion.", price: "17" },
-    { name: "Vegetable Lo Mein", desc: "Egg noodle, seasonal vegetables, light soy.", price: "13" },
+  hibachi: [
+    { name: "Hibachi Lobster Tail and Steak", desc: "With soup, salad, hibachi shrimp and rice.", price: "33", tag: "Signature" },
+    { name: "Hibachi Chicken and Shrimp", desc: "With soup, salad, hibachi shrimp and rice.", price: "25" },
+    { name: "Hibachi Steak", desc: "With soup, salad, hibachi shrimp and rice.", price: "24" },
+    { name: "Steak Teriyaki", desc: "With miso soup or salad and rice.", price: "21" },
+    { name: "Singapore Mai Fun", desc: "Rice vermicelli, chicken, shrimp and vegetable, yellow curry.", price: "14", tag: "Spicy" },
+    { name: "Drunken Noodle", desc: "Wide rice noodles, basil and chili.", price: "12", tag: "Spicy" },
+    { name: "Pad Thai Noodle", desc: "Thai flat noodles, tamarind and peanut.", price: "12" },
+    { name: "Hawaiian Pineapple Fried Rice", desc: "Wok-fired with fresh pineapple.", price: "13" },
   ],
-  signature: [
-    { name: "Omakase Tasting", desc: "Chef-selected progression — 10 courses.", price: "85", tag: "Reserve" },
-    { name: "Whole Live Lobster", desc: "Ginger-scallion or salt &amp; pepper.", price: "MP" },
-    { name: "Wagyu Hibachi", desc: "A5 Japanese wagyu, garlic butter, charred lemon.", price: "62" },
-    { name: "Crispy Whole Branzino", desc: "Thai basil sauce, mango-cucumber relish.", price: "34" },
-    { name: "Black Cod Miso", desc: "Saikyo miso, 48-hour marinade.", price: "36", tag: "Signature" },
-    { name: "Nova Tower", desc: "Tuna, salmon, avocado, crispy rice base.", price: "22" },
-    { name: "Truffle Yellowtail", desc: "Six pieces, white truffle oil, micro chive.", price: "24" },
-    { name: "Lychee Martini Float", desc: "House cocktail dessert, lychee sorbet.", price: "13" },
+  starters: [
+    { name: "Sushi Sandwich", desc: "Spicy tuna, lobster salad, tamago, avocado and kani with black caviar.", price: "15" },
+    { name: "Spicy Tuna Dumpling", desc: "Delicate dumplings with chili.", price: "12", tag: "Spicy" },
+    { name: "Soft Shell Crab", desc: "Lightly fried, house sauce.", price: "11" },
+    { name: "Chicken Lettuce Wrap", desc: "Diced chicken and bell peppers with Thai hoisin sauce.", price: "12" },
+    { name: "Rock Shrimp", desc: "Crispy shrimp with curry cream sauce.", price: "10", tag: "Spicy" },
+    { name: "Crispy Calamari Salad", desc: "Roasted garlic and Thai chili dressing.", price: "10" },
+    { name: "Beef Negimaki", desc: "Scallion wrapped in thin-sliced beef.", price: "12" },
+    { name: "Homemade Dumpling Soup", desc: "Pork and shrimp.", price: "4" },
   ],
 };
 
@@ -89,7 +99,7 @@ document.querySelectorAll('.tab').forEach(btn => {
   });
 });
 
-renderMenu('sushi');
+renderMenu('rolls');
 
 // ---------- Nav scroll state ----------
 const nav = document.getElementById('nav');
@@ -130,13 +140,13 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
 // ---------- Today's hours highlight ----------
 const HOURS = [
-  { open: '12:00 PM', close: '10:00 PM', label: 'Sunday' },
+  { open: '1:00 PM', close: '10:00 PM', label: 'Sunday' },
   { open: '11:00 AM', close: '10:00 PM', label: 'Monday' },
   { open: '11:00 AM', close: '10:00 PM', label: 'Tuesday' },
   { open: '11:00 AM', close: '10:00 PM', label: 'Wednesday' },
   { open: '11:00 AM', close: '10:00 PM', label: 'Thursday' },
   { open: '11:00 AM', close: '11:00 PM', label: 'Friday' },
-  { open: '12:00 PM', close: '11:00 PM', label: 'Saturday' },
+  { open: '11:00 AM', close: '11:00 PM', label: 'Saturday' },
 ];
 
 const today = new Date().getDay();

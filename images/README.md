@@ -44,7 +44,7 @@ those belong to the reviewers, and using them commercially is a copyright issue.
 
 ## Bonus (optional)
 
-- `favicon.png` — 512×512, the "新" mark on a dark background, or Nova's logo.
+- `favicon.png` — 512×512, Nova's circular wordmark logo on a dark background.
 - `og.jpg` — 1200×630, a single hero-quality image for social sharing previews
   (Facebook/iMessage link cards). Add `<meta property="og:image" content="images/og.jpg">` to `<head>` once added.
 
