@@ -1034,3 +1034,74 @@ p { color: var(--ink-2); }
   .ayce-badge { padding: 18px 22px; right: 12px; bottom: -20px; }
   .badge-price { font-size: 1.8rem; }
 }
+
+/* ============================================
+   Chef's Signatures
+   ============================================ */
+.signatures { background: var(--bg); }
+.sig-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.sig-card { margin: 0; }
+.sig-media {
+  overflow: hidden;
+  border-radius: 3px;
+  aspect-ratio: 4 / 3;
+  background: var(--bg-2);
+}
+.sig-media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .7s var(--ease);
+}
+.sig-card:hover .sig-media img { transform: scale(1.05); }
+.sig-card figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 2px 0;
+}
+.sig-name { font-family: var(--serif); font-size: 1.3rem; color: var(--ink); }
+.sig-note { font-size: 0.8rem; letter-spacing: 0.04em; color: var(--ink-3); }
+
+/* ============================================
+   Visit exterior banner
+   ============================================ */
+.visit-exterior {
+  display: block;
+  position: relative;
+  margin: 0 0 56px;
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+.visit-exterior img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform .8s var(--ease);
+}
+.visit-exterior:hover img { transform: scale(1.04); }
+.visit-exterior-tag {
+  position: absolute;
+  left: 16px; bottom: 16px;
+  background: rgba(7, 8, 12, .78);
+  color: var(--ink);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  padding: 10px 16px;
+  border-radius: 3px;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+@media (max-width: 980px) {
+  .sig-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+}
+@media (max-width: 640px) {
+  .sig-grid { gap: 14px; }
+  .sig-name { font-size: 1.05rem; }
+  .visit-exterior { aspect-ratio: 4 / 3; }
+}
