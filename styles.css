@@ -19,7 +19,7 @@
   --line: rgba(245, 241, 232, 0.08);
   --line-2: rgba(245, 241, 232, 0.14);
 
-  --serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --serif: "Fraunces", "Cormorant Garamond", Georgia, serif;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
 
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -79,27 +79,30 @@ button { font-family: inherit; cursor: pointer; }
 
 .display, .display-sm, h1, h2, h3, h4 {
   font-family: var(--serif);
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  font-weight: 600;
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
   line-height: 1.05;
   margin: 0;
 }
 
 .display {
-  font-size: clamp(2.6rem, 6.5vw, 5.4rem);
-  font-weight: 400;
-  line-height: 1.04;
+  font-size: clamp(2.7rem, 6.6vw, 5.6rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
 }
 .display em {
   font-style: italic;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--gold-2);
 }
 
 .display-sm {
-  font-size: clamp(2rem, 3.6vw, 3.2rem);
-  font-weight: 400;
-  line-height: 1.1;
+  font-size: clamp(2.1rem, 3.8vw, 3.35rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
 }
 
 .eyebrow {
@@ -545,8 +548,8 @@ p { color: var(--ink-2); }
 .stat { display: flex; flex-direction: column; gap: 4px; }
 .stat strong {
   font-family: var(--serif);
-  font-size: 2rem;
-  font-weight: 400;
+  font-size: 2.1rem;
+  font-weight: 600;
   color: var(--gold);
   line-height: 1;
 }
@@ -882,7 +885,7 @@ p { color: var(--ink-2); }
 .visit-card h3 {
   font-family: var(--serif);
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--ink);
 }
 .visit-card p { margin: 0; }
@@ -1063,7 +1066,7 @@ p { color: var(--ink-2); }
   gap: 4px;
   padding: 16px 2px 0;
 }
-.sig-name { font-family: var(--serif); font-size: 1.3rem; color: var(--ink); }
+.sig-name { font-family: var(--serif); font-size: 1.3rem; font-weight: 500; color: var(--ink); }
 .sig-note { font-size: 0.8rem; letter-spacing: 0.04em; color: var(--ink-3); }
 
 /* ============================================
