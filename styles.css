@@ -348,27 +348,52 @@ p { color: var(--ink-2); }
   background: linear-gradient(180deg, rgba(10,11,16,.40) 0%, rgba(22,26,52,.32) 40%, rgba(10,11,16,.96) 100%);
 }
 
-/* Tubes cursor canvas (desktop only) sits above the photo, behind the scrim */
-.hero-tubes {
+/* Tubes interlude — interactive WebGL band below the hero */
+.tubes-band {
+  position: relative;
+  height: 68vh;
+  min-height: 440px;
+  background: #07080c;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.tubes-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 1.2s var(--ease);
+}
+.tubes-canvas.is-on { opacity: 1; }
+.tubes-overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
-  opacity: 0;
   pointer-events: none;
-  transition: opacity 1.2s var(--ease);
+  background: radial-gradient(70% 70% at 50% 50%, transparent 0%, rgba(7,8,12,.55) 100%);
 }
-.hero-tubes.is-on { opacity: 1; }
-.hero-scrim {
-  position: absolute;
-  inset: 0;
+.tubes-content {
+  position: relative;
   z-index: 2;
+  text-align: center;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(10,11,16,.30) 0%, rgba(10,11,16,.18) 42%, rgba(10,11,16,.92) 100%);
+  padding: 0 22px;
+}
+.tubes-content .display-sm { color: var(--ink); }
+.tubes-hint {
+  margin-top: 16px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
 }
 
 .hero-content {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   max-width: var(--container);
   margin: 0 auto;
   padding: 80px 32px 120px;
@@ -406,7 +431,7 @@ p { color: var(--ink-2); }
   bottom: 28px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 4;
+  z-index: 3;
   width: 22px; height: 38px;
   border: 1px solid var(--line-2);
   border-radius: 12px;
