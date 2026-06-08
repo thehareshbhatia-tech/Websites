@@ -197,3 +197,42 @@ if (form) {
 // ---------- Year ----------
 const y = document.getElementById('year');
 if (y) y.textContent = new Date().getFullYear();
+
+// ---------- Smooth scroll + hero parallax (GSAP + Lenis) ----------
+// Ported from the Osmo parallax component (React) to vanilla JS: Lenis drives
+// smooth scrolling and feeds GSAP ScrollTrigger, which moves the hero layers
+// at different speeds for depth. Degrades gracefully if libs fail to load or
+// the visitor prefers reduced motion.
+(function initMotion() {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion || typeof gsap === 'undefined' || typeof Lenis === 'undefined') return;
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Smooth scrolling
+  const lenis = new Lenis({ duration: 1.1, smoothWheel: true });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add((time) => lenis.raf(time * 1000));
+  gsap.ticker.lagSmoothing(0);
+
+  // Route in-page anchor links through Lenis for a smooth glide
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    const id = a.getAttribute('href');
+    if (!id || id.length <= 1) return;
+    a.addEventListener('click', (e) => {
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      lenis.scrollTo(target, { offset: -64 });
+    });
+  });
+
+  // Hero parallax: the photo drifts down slowly while the headline lifts and
+  // fades — the layered-depth effect, kept subtle so the page stays calm.
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    const st = { trigger: hero, start: 'top top', end: 'bottom top', scrub: 0 };
+    gsap.to('.hero-media', { yPercent: 8, ease: 'none', scrollTrigger: st });
+    gsap.to('.hero-content', { yPercent: -6, opacity: 0.55, ease: 'none', scrollTrigger: st });
+  }
+})();
