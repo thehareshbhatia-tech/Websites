@@ -1,5 +1,29 @@
 # Nova Asian Bistro — Photo Brief
 
+## ✅ Currently installed (real Nova photos, `.webp`)
+
+The site is now using real photos of the restaurant:
+
+| File | Subject |
+|---|---|
+| `hero.webp` | Nova logo wall / reception (hero background) |
+| `chef.webp` | Dining room and bar (Our Story, main) |
+| `detail.webp` | Plated sashimi (Our Story, inset) |
+| `ayce.webp` | Sushi & sashimi platter (All-You-Can-Eat) |
+| `gallery-1.webp` | Tuna-wrapped spicy roll |
+| `gallery-2.webp` | Crispy calamari |
+| `gallery-3.webp` | Nova logo wall (second angle) |
+| `gallery-4.webp` | Dining room + bar (beaded curtain) |
+| `gallery-5.webp` | The curved bar |
+| `gallery-6.webp` | Dining room from the entrance |
+
+To **replace** any of these, drop a new file with the same name (any web image
+format works — update the reference in `index.html` if you change the extension).
+
+---
+
+## Original brief (for sourcing better/replacement photos)
+
 Drop photos in this folder using the **exact filenames below**. The site loads
 local images first, and gracefully falls back to a temporary stock photo if a
 file is missing — so you can add them one at a time without breaking the site.

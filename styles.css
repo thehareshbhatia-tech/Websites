@@ -680,8 +680,8 @@ p { color: var(--ink-2); }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 220px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 260px;
   gap: 12px;
 }
 .g-item {
