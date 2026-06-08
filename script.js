@@ -240,14 +240,14 @@ if (y) y.textContent = new Date().getFullYear();
 // ---------- Tubes interlude (WebGL band below the hero, desktop only) ----------
 // Ported from the threejs-components Tubes Cursor React component to vanilla JS.
 // Lives in its own band below the hero. Recolored to Nova's blue/violet/gold so
-// the glow echoes the restaurant's real LED lighting. Activates only with a real
-// pointer + WebGL + motion allowed; otherwise the band stays a quiet dark panel.
+// the glow echoes the restaurant's real LED lighting. Runs on desktop, tablet
+// (incl. iPad), and touch — driven by mouse or finger. Falls back to a quiet
+// dark panel only if WebGL is unavailable or the visitor prefers reduced motion.
 (function initTubesBand() {
   const canvas = document.getElementById('tubesCanvas');
   if (!canvas) return;
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const noPointer = window.matchMedia('(hover: none), (pointer: coarse)').matches;
   const hasWebGL = (() => {
     try {
       const t = document.createElement('canvas');
@@ -255,8 +255,8 @@ if (y) y.textContent = new Date().getFullYear();
     } catch (e) { return false; }
   })();
 
-  // On touch/mobile, reduced motion, or no WebGL → leave the photo hero in place.
-  if (reduceMotion || noPointer || !hasWebGL) return;
+  // Only skip when motion is disabled or WebGL is unsupported.
+  if (reduceMotion || !hasWebGL) return;
 
   // Nova-branded palettes (blue / violet / gold). Click cycles between them.
   const palettes = [
@@ -277,7 +277,7 @@ if (y) y.textContent = new Date().getFullYear();
         });
         canvas.classList.add('is-on');
 
-        // Click anywhere in the band shuffles to the next on-brand palette.
+        // Tap/click anywhere in the band shuffles to the next on-brand palette.
         let i = 0;
         const band = document.getElementById('tubes');
         const hint = band && band.querySelector('.tubes-hint');
@@ -290,6 +290,20 @@ if (y) y.textContent = new Date().getFullYear();
             if (hint) hint.style.opacity = '0';
           });
         }
+
+        // Touch support (iPad/phones): forward finger position as pointer/mouse
+        // moves so the tubes follow the finger. Passive so page scrolling still works.
+        const forwardTouch = (e) => {
+          const t = e.touches && e.touches[0];
+          if (!t) return;
+          const opts = { clientX: t.clientX, clientY: t.clientY, bubbles: true };
+          window.dispatchEvent(new MouseEvent('mousemove', opts));
+          window.dispatchEvent(new PointerEvent('pointermove', opts));
+          canvas.dispatchEvent(new MouseEvent('mousemove', opts));
+          canvas.dispatchEvent(new PointerEvent('pointermove', opts));
+        };
+        (band || canvas).addEventListener('touchstart', forwardTouch, { passive: true });
+        (band || canvas).addEventListener('touchmove', forwardTouch, { passive: true });
       })
       .catch((err) => console.error('TubesCursor failed to load:', err));
   }, 120);
