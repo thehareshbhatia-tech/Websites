@@ -236,3 +236,60 @@ if (y) y.textContent = new Date().getFullYear();
     gsap.to('.hero-content', { yPercent: -6, opacity: 0.55, ease: 'none', scrollTrigger: st });
   }
 })();
+
+// ---------- Hero "tubes" cursor background (WebGL, desktop only) ----------
+// Ported from the threejs-components Tubes Cursor React component to vanilla JS.
+// Recolored to Nova's blue/violet/gold so the glow echoes the restaurant's real
+// LED lighting. Activates only with a real pointer + WebGL + motion allowed;
+// otherwise the hero photo (the fallback layer beneath) stays in view.
+(function initHeroTubes() {
+  const canvas = document.getElementById('heroTubes');
+  if (!canvas) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const noPointer = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+  const hasWebGL = (() => {
+    try {
+      const t = document.createElement('canvas');
+      return !!(t.getContext('webgl2') || t.getContext('webgl'));
+    } catch (e) { return false; }
+  })();
+
+  // On touch/mobile, reduced motion, or no WebGL → leave the photo hero in place.
+  if (reduceMotion || noPointer || !hasWebGL) return;
+
+  // Nova-branded palettes (blue / violet / gold). Click cycles between them.
+  const palettes = [
+    { tubes: ['#2f6bff', '#8a5cff', '#c9a961'], lights: ['#2f6bff', '#5f8bff', '#8a5cff', '#e6c97a'] },
+    { tubes: ['#11cdef', '#2f6bff', '#8a5cff'], lights: ['#21d4fd', '#2f6bff', '#8a5cff', '#5f8bff'] },
+    { tubes: ['#c9a961', '#e6c97a', '#8a5cff'], lights: ['#e6c97a', '#c9a961', '#8a5cff', '#2f6bff'] }
+  ];
+
+  // Delay init so the canvas has its painted dimensions (avoids "radius is NaN").
+  setTimeout(() => {
+    import('https://cdn.jsdelivr.net/npm/threejs-components@0.0.19/build/cursors/tubes1.min.js')
+      .then((module) => {
+        const TubesCursor = module.default;
+        if (!canvas.isConnected) return;
+
+        const app = TubesCursor(canvas, {
+          tubes: { colors: palettes[0].tubes, lights: { intensity: 180, colors: palettes[0].lights } }
+        });
+        canvas.classList.add('is-on');
+
+        // Click anywhere in the hero (except buttons/links) shuffles the palette.
+        let i = 0;
+        const heroSection = document.getElementById('top');
+        if (heroSection) {
+          heroSection.style.cursor = 'pointer';
+          heroSection.addEventListener('click', (e) => {
+            if (e.target.closest('a, button, input, select, textarea')) return;
+            i = (i + 1) % palettes.length;
+            app.tubes.setColors(palettes[i].tubes);
+            app.tubes.setLightsColors(palettes[i].lights);
+          });
+        }
+      })
+      .catch((err) => console.error('TubesCursor failed to load:', err));
+  }, 120);
+})();
